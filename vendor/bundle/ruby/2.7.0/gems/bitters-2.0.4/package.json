@@ -1,0 +1,34 @@
+{
+  "name": "Bitters",
+  "version": "2.0.4",
+  "description": "Scaffold styles, variables and structure for web projects.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thoughtbot/bitters.git"
+  },
+  "keywords": [
+    "css",
+    "sass",
+    "scss",
+    "scaffold"
+  ],
+  "author": {
+    "name": "thoughtbot",
+    "url": "http://thoughtbot.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thoughtbot/bitters/issues"
+  },
+  "devDependencies": {
+    "@thoughtbot/stylelint-config": "1.1.0",
+    "bourbon": "^7.0.0",
+    "parcel-bundler": "^1.12.4",
+    "sass": "^1.26.5",
+    "stylelint": "10.1.0"
+  },
+  "scripts": {
+    "contrib": "npx parcel contrib/index.html --out-dir contrib/build",
+    "stylelint": "npx stylelint 'core/**/*.scss'"
+  }
+}

@@ -1,0 +1,30 @@
+name: CI
+on:
+  - push
+  - pull_request
+jobs:
+  test:
+    name: Ruby ${{ matrix.ruby }} & Rack ${{ matrix.rack }}
+    runs-on: 'ubuntu-latest'
+    strategy:
+      matrix:
+        ruby:
+          - '3.0'
+          - '2.7'
+          - '2.6'
+        rack:
+          - '1.5'
+          - '1.6'
+          - '2.0'
+          - '2.1'
+          - '2.2'
+      fail-fast: false
+    env:
+      BUNDLE_GEMFILE: "gemfiles/rack_${{ matrix.rack }}.gemfile"
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby }}
+      - run: bundle install
+      - run: bundle exec rake

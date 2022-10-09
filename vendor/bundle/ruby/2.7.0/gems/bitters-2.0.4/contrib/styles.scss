@@ -1,0 +1,19 @@
+@import "~node_modules/bourbon/core/bourbon";
+@import "../core/base";
+
+body {
+  margin: 0 0 calc(var(--spacing) * 2);
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 500px;
+  padding: 0 var(--spacing);
+}
+
+.welcome-message {
+  background-color: #f2f2f2;
+  margin-bottom: var(--spacing);
+  padding: var(--spacing) 0;
+  text-align: center;
+}
